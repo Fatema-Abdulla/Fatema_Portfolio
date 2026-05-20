@@ -1,20 +1,24 @@
 import "../App.css"
-import * as React from "react"
+
 import Box from "@mui/material/Box"
-import Grid from "@mui/material/Grid"
-import Card from "@mui/material/Card"
-import CardContent from "@mui/material/CardContent"
+import Timeline from "@mui/lab/Timeline"
+import TimelineItem from "@mui/lab/TimelineItem"
+import TimelineSeparator from "@mui/lab/TimelineSeparator"
+import TimelineConnector from "@mui/lab/TimelineConnector"
+import TimelineContent from "@mui/lab/TimelineContent"
+import TimelineDot from "@mui/lab/TimelineDot"
+import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent"
 
 const steps = [
   {
     id: 1,
     title: "IT Specialist",
-    company: "Microlink Solutions",
+    company: "STC Bahrain",
     date: "Jan 2026 - Present",
     description: [
       "Manage and resolve app incidents, providing clear and effective communication as first-line support for customer technical issues.",
       "Analyze application logs to quickly identify and resolve user-facing issues.",
-      "Troubleshoot and identify application errors to maintain optimal platform stability.",
+      "Leverage CRM tools to access order details.",
       "Utilize SQL queries to manage and interact with the database, performing data updates and administrative tasks to support application operations.",
       "Monitor application performance metrics to ensure efficient and uninterrupted user operations.",
     ],
@@ -34,45 +38,17 @@ const steps = [
   },
   {
     id: 3,
-    title: "Designer and Developer Internship",
+    title: "WordPress Developer Internship",
     company: "Space Tap",
     date: "Jul 2024 - Aug 2024",
     description: [
       "Successfully completed a university internship, specializing in web development and content management via WordPress.",
       "Designed and customized multiple responsive website pages for clients to enhance user experience (UX).",
       "Added and managed product on a client’s website, ensuring accurate information.",
-      "Developed a full CRUD website using PHP, including database management and successful deployment on a web hosting server.",
-      "Gained a foundational understanding of Flutter and built a basic mobile application as a practical project.",
+      "Developed a full CRUD website using PHP, including database management and successful deployment on a web hosting server."
     ],
   },
 ]
-
-// from AI: Chatgpt
-const CircleIcon = () => {
-  return (
-    <div
-      style={{
-        position: "absolute",
-        left: 0,
-        top: 38,
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-      }}
-    >
-      <div
-        style={{
-          width: 14,
-          height: 14,
-          borderRadius: "50%",
-          backgroundColor: "#10202d",
-          position: "relative",
-        }}
-      />
-      <div className="line"></div>
-    </div>
-  )
-}
 
 const WorkExperinces = () => {
   return (
@@ -84,41 +60,37 @@ const WorkExperinces = () => {
           width: "100%",
           display: "flex",
           justifyContent: "center",
+          marginLeft: -6,
         }}
       >
-        <Grid container direction="column" spacing={2}>
+        <Timeline position="right">
           {steps.map((step) => (
-            <React.Fragment key={step.id}>
-              <Grid size={{ xs: 12, md: 1 }} sx={{ position: "relative" }}>
-                <CircleIcon />
-              </Grid>
+            <TimelineItem key={step.id}>
+              <TimelineOppositeContent
+                sx={{
+                  color: "text.secondary",
+                }}
+              >
+                <div className="step-dates">{step.date}</div>
+              </TimelineOppositeContent>
+              <TimelineSeparator>
+                <TimelineDot />
+                <TimelineConnector />
+              </TimelineSeparator>
+              <TimelineContent>
+                <div className="step-titles">{step.title}</div>
+                <div className="step-companies">{step.company}</div>
 
-              <Grid size={{ xs: 12, md: 11 }}>
-                <Card
-                  sx={{
-                    backgroundColor: "transparent",
-                    width: "100%",
-                    maxWidth: 600,
-                    boxShadow: "none",
-                    marginLeft: 2,
-                  }}
-                >
-                  <CardContent>
-                    <div className="step-titles">{step.title}</div>
-                    <div className="step-companies">{step.company}</div>
-                    <div className="step-dates">{step.date}</div>
-
-                    <ul className="step-descriptions">
-                      {step.description.map((item, index) => (
-                        <li key={index}>{item}</li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              </Grid>
-            </React.Fragment>
+                <ul className="step-descriptions">
+                  {step.description.map((item, index) => (
+                    <li className="step-points" key={index}>{item}</li>
+                  ))}
+                </ul>
+                <br />
+              </TimelineContent>
+            </TimelineItem>
           ))}
-        </Grid>
+        </Timeline>
       </Box>
     </div>
   )
