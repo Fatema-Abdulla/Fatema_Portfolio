@@ -3,12 +3,12 @@ import { TextField, Button, Box, Alert } from "@mui/material"
 
 const Contact = () => {
   const initialFormState = {
-  name: "",
-  email: "",
-  description: "",
-};
+    name: "",
+    email: "",
+    description: "",
+  }
 
-  const [formData, setFormData] = useState(initialFormState);
+  const [formData, setFormData] = useState(initialFormState)
 
   const [success, setSuccess] = useState(false)
 
@@ -59,7 +59,17 @@ const Contact = () => {
       <p className="contact-des">
         Please get in contact with me if you have any questions.
       </p>
-      <Box sx={{ maxWidth: 600, mx: "auto" }}>
+      <Box
+        sx={{
+          maxWidth: 600,
+          mx: "auto",
+          backgroundColor: "#fff",
+          padding: 4,
+          borderRadius: 3,
+          boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+          border: "1px solid #e0e0e0",
+        }}
+      >
         {success && (
           <Alert severity="success" sx={{ mt: 2, mb: 1 }}>
             Email Sent Successfully!

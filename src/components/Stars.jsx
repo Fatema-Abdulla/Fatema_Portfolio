@@ -8,7 +8,7 @@ const Balls = () => {
       {particles.map((_, i) => {
         const size = Math.random() * 6 + 2;
         const left = Math.random() * 100;
-        const top = Math.random() * 100; // ⭐ مهم جدًا
+        const top = Math.random() * 100; 
         const duration = 15 + Math.random() * 20;
         const delay = Math.random() * 10;
 

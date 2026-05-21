@@ -42,7 +42,6 @@ const steps = [
     company: "Space Tap",
     date: "Jul 2024 - Aug 2024",
     description: [
-      "Successfully completed a university internship, specializing in web development and content management via WordPress.",
       "Designed and customized multiple responsive website pages for clients to enhance user experience (UX).",
       "Added and managed product on a client’s website, ensuring accurate information.",
       "Developed a full CRUD website using PHP, including database management and successful deployment on a web hosting server."

@@ -24,18 +24,33 @@ const CustomizeBox = styled(Box)(() => ({
   borderRadius: "12px",
   boxShadow: "0px 4px 10px rgba(0,0,0,0.1)",
   transition: "0.3s",
+
+  opacity: 0,
+  animation: "slideRightFade 0.8s ease forwards",
+  animationDelay: "0.8s",
   "&:hover": {
     transform: "scale(1.05)",
     boxShadow: 4,
+  },
+
+  "@keyframes slideRightFade": {
+    from: {
+      opacity: 0,
+      transform: "translateX(35px)",
+    },
+    to: {
+      opacity: 1,
+      transform: "translateX(0)",
+    },
   },
 }))
 
 const Skills = () => {
   return (
     <div>
-      <h2 className="about-skill-title">Tech Stack</h2>
+      <h2 className="skill-title">Tech Stack</h2>
       <Grid container spacing={2}>
-        <Grid size={{xs: 12}}>
+        <Grid size={{ xs: 12 }}>
           {skillsData.sections.map((sec) => (
             <div key={sec.key}>
               <Typography
@@ -44,6 +59,10 @@ const Skills = () => {
                   marginTop: sec.key === "programs" ? 0 : "26px",
                   fontSize: "1.09rem",
                   marginBottom: "5px",
+
+                  opacity: 0,
+                  animation: "slideRightFade 0.9s ease forwards",
+                  animationDelay: "0.5s",
                 }}
               >
                 ➤ {sec.title}
