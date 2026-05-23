@@ -423,6 +423,32 @@ body {
   margin-bottom: 10px;
 }
 
+.timeline-item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s ease;
+}
+
+.timeline-item.show-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-item.show-item .step-titles {
+  animation: fadeText 0.8s ease forwards;
+}
+
+@keyframes fadeText {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .footer-text {
   padding: 18px 0 10px 70px;
 }
