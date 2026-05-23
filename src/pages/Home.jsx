@@ -13,16 +13,8 @@ const Home = () => {
   return (
     <div>
       <HeaderHome />
-      <Box sx={{ flexGrow: 1 }} className="about-skill">
-        <Grid container spacing={1}>
-          <Grid size={{ xs: 12, md: 7 }}>
-            <AboutMe />
-          </Grid>
-          <Grid size={{ xs: 12, md: 5 }}>
-            <TechStack />
-          </Grid>
-        </Grid>
-      </Box>
+      <AboutMe />
+      <TechStack />
       <WorkExperinces />
       <Element name="contact">
         <Contact />

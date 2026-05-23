@@ -261,46 +261,66 @@ body {
   }
 }
 
-.about-skill {
-  background-color: #f7f7f7;
-  margin: 20px auto;
-  max-width: 1200px;
-  width: 100%;
-  padding: 0 25px;
-}
-
 .about-me {
-  padding-right: 93px;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-@media (max-width: 900px) {
-  .about-me {
-    padding-right: 30px;
-  }
-}
-
-.about-skill-title {
+.about-title {
   color: #c7a667;
-  font-size: 35px;
+  font-size: 2.4rem;
   font-weight: 800;
-  margin: 25px 0 5px 0;
+  margin-top: 45px;
+  margin-bottom: 20px;
+  text-align: center;
+  position: relative;
 
   animation: slideLeftFade 0.8s ease forwards;
 }
 
 .about-paragraph {
-  line-height: 28px;
-  font-weight: 500;
-  text-align: justify;
-  word-spacing: 2px;
-  font-size: 1.09rem;
+  position: relative;
 
+  color: #000;
+  line-height: 1.95;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  font-size: 1.05rem;
+
+  margin-bottom: 20px;
+  padding-left: 18px;
+
+  border-left: 1px solid rgba(199, 166, 103, 0.25);
+}
+
+#ph-1 {
   opacity: 0;
   animation: slideLeftFade 0.8s ease forwards;
   animation-delay: 0.5s;
 }
+#ph-2 {
+  opacity: 0;
+  animation: slideLeftFade 0.8s ease forwards;
+  animation-delay: 0.8s;
+}
+#ph-3 {
+  opacity: 0;
+  animation: slideLeftFade 0.8s ease forwards;
+  animation-delay: 1.2s;
+}
 
+.about-paragraph:hover {
+  border-left-color: #10202d;
+  transform: translateX(4px);
+  transition: 0.3s ease;
+}
 
+.about-paragraph::first-letter {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #10202d;
+}
 
 @keyframes slideLeftFade {
   from {
@@ -318,7 +338,8 @@ body {
   color: #c7a667;
   font-size: 35px;
   font-weight: 800;
-  margin: 25px 0 5px 0;
+  margin: 55px 0 5px 0;
+  text-align: center;
 
   animation: slideRightFade 0.8s ease forwards;
 }
@@ -334,6 +355,12 @@ body {
   }
 }
 
+.tech-stack-container {
+  margin: 0 auto;
+  max-width: 500px;
+  width: 100%;
+}
+
 .contact-me,
 .work {
   padding: 0 25px;
@@ -345,7 +372,7 @@ body {
   color: #c7a667;
   font-size: 35px;
   font-weight: 800;
-  margin: 75px 0 5px 0;
+  margin: 85px 0 5px 0;
   text-align: center;
 }
 
@@ -374,7 +401,6 @@ body {
   font-size: 16px;
   color: #5f6b76;
   font-weight: bold;
-
 }
 
 .step-companies {
@@ -389,12 +415,12 @@ body {
   color: #1e293b;
   margin-top: 16px;
   padding-left: 10px;
+  padding-right: 14px;
   line-height: 22px;
 }
 
 .step-points {
   margin-bottom: 10px;
-  text-align: justify;
 }
 
 .footer-text {

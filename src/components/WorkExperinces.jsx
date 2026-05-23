@@ -17,10 +17,11 @@ const steps = [
     date: "Jan 2026 - Present",
     description: [
       "Leverage CRM tools to access order details.",
+
+      "Resolve user tickets and communicate clearly as first-line support.",
+      "Use SQL queries to update data and manage the application database.",
+      "Monitor application performance to keep it running smoothly for users.",
       "Analyze application logs to quickly identify and resolve user-facing issues.",
-      "Manage and resolve app incidents, providing clear and effective communication as first-line support for customer technical issues.",
-      "Utilize SQL queries to manage and interact with the database, performing data updates and administrative tasks to support application operations.",
-      "Monitor application performance metrics to ensure efficient and uninterrupted user operations.",
     ],
   },
   {
@@ -30,9 +31,9 @@ const steps = [
     date: "Aug 2025 - Nov 2025",
     description: [
       "Utilized Git and GitHub for managing code repositories and streamlining team collaboration.",
-      "Developed full-stack web applications by deploying JavaScript, MERN/MEN stacks, and Python with Django framework.",
-      "Tested and validated backend functionality using Postman and Insomnia to ensure seamless data integration.",
-      "Designed and managed relational and non-relational databases using MongoDB and PostgreSQL for efficient data storage.",
+      "Built full-stack web apps using JavaScript, MEN, MERN, and Python with Django.",
+      "Tested backend functionality with Postman and Insomnia to ensure smooth data flow.",
+      "Managed MongoDB and PostgreSQL databases for efficient data storage.",
       "Engaged in collaborative team projects with fellow students to build integrated software solutions.",
     ],
   },
@@ -59,7 +60,7 @@ const WorkExperinces = () => {
           width: "100%",
           display: "flex",
           justifyContent: "center",
-          marginLeft: -6,
+          marginLeft: { xs: 0, md: -5 },
         }}
       >
         <Timeline position="right">

@@ -47,7 +47,7 @@ const CustomizeBox = styled(Box)(() => ({
 
 const Skills = () => {
   return (
-    <div>
+    <Box className="tech-stack-container">
       <h2 className="skill-title">Tech Stack</h2>
       <Grid container spacing={2}>
         <Grid size={{ xs: 12 }}>
@@ -59,16 +59,17 @@ const Skills = () => {
                   marginTop: sec.key === "programs" ? 0 : "26px",
                   fontSize: "1.09rem",
                   marginBottom: "5px",
+                  textAlign: "center",
 
                   opacity: 0,
                   animation: "slideRightFade 0.9s ease forwards",
                   animationDelay: "0.5s",
                 }}
               >
-                ➤ {sec.title}
+                {sec.title}
               </Typography>
 
-              <BigBox>
+              <BigBox sx={{ justifyContent: "center" }}>
                 {skillsData.allSkills[sec.key].map((skill) => (
                   <CustomizeBox key={skill.name}>
                     <img
@@ -83,7 +84,7 @@ const Skills = () => {
           ))}
         </Grid>
       </Grid>
-    </div>
+    </Box>
   )
 }
 
