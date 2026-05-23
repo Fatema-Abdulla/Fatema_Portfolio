@@ -18,8 +18,8 @@
         "icon": "php.png"
       },
       {
-        "name": "SQL",
-        "icon": "sql-server.png"
+        "name": "MySQL",
+        "icon": "SQL-My.png"
       },
       {
         "name": "Python",

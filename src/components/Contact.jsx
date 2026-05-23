@@ -79,7 +79,7 @@ const Contact = () => {
         <Box component="form" onSubmit={handleSubmit}>
           <TextField
             fullWidth
-            label="Name"
+            label="Your Name"
             name="name"
             value={formData.name}
             onChange={handleChange}
@@ -89,7 +89,7 @@ const Contact = () => {
 
           <TextField
             fullWidth
-            label="Email"
+            label="Your Email"
             name="email"
             type="email"
             value={formData.email}
@@ -100,7 +100,7 @@ const Contact = () => {
 
           <TextField
             fullWidth
-            label="Description"
+            label="Your Message"
             name="description"
             value={formData.description}
             onChange={handleChange}

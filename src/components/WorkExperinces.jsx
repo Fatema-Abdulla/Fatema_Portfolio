@@ -16,9 +16,9 @@ const steps = [
     company: "STC Bahrain",
     date: "Jan 2026 - Present",
     description: [
-      "Manage and resolve app incidents, providing clear and effective communication as first-line support for customer technical issues.",
-      "Analyze application logs to quickly identify and resolve user-facing issues.",
       "Leverage CRM tools to access order details.",
+      "Analyze application logs to quickly identify and resolve user-facing issues.",
+      "Manage and resolve app incidents, providing clear and effective communication as first-line support for customer technical issues.",
       "Utilize SQL queries to manage and interact with the database, performing data updates and administrative tasks to support application operations.",
       "Monitor application performance metrics to ensure efficient and uninterrupted user operations.",
     ],
@@ -42,9 +42,9 @@ const steps = [
     company: "Space Tap",
     date: "Jul 2024 - Aug 2024",
     description: [
-      "Designed and customized multiple responsive website pages for clients to enhance user experience (UX).",
       "Added and managed product on a client’s website, ensuring accurate information.",
-      "Developed a full CRUD website using PHP, including database management and successful deployment on a web hosting server."
+      "Designed and customized multiple responsive website pages for clients to enhance user experience (UX).",
+      "Developed a full CRUD website using PHP, including database management and successful deployment on a web hosting server.",
     ],
   },
 ]
@@ -68,6 +68,9 @@ const WorkExperinces = () => {
               <TimelineOppositeContent
                 sx={{
                   color: "text.secondary",
+                  flex: { xs: 0.3, md: 1 },
+                  minWidth: { xs: "70px", md: "auto" },
+                  paddingRight: { xs: 1, md: 2 },
                 }}
               >
                 <div className="step-dates">{step.date}</div>
@@ -82,7 +85,9 @@ const WorkExperinces = () => {
 
                 <ul className="step-descriptions">
                   {step.description.map((item, index) => (
-                    <li className="step-points" key={index}>{item}</li>
+                    <li className="step-points" key={index}>
+                      {item}
+                    </li>
                   ))}
                 </ul>
                 <br />

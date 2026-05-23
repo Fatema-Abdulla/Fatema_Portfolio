@@ -30,7 +30,7 @@ const CustomizeBox = styled(Box)(() => ({
   animationDelay: "0.8s",
   "&:hover": {
     transform: "scale(1.05)",
-    boxShadow: 4,
+    boxShadow: "0px 6px 16px rgba(0,0,0,0.2)",
   },
 
   "@keyframes slideRightFade": {

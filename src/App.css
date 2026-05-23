@@ -30,7 +30,6 @@ body {
   opacity: 0;
   animation: fadeUp 1s ease forwards;
   animation-delay: 0.3s;
-
 }
 
 .nav-center {
@@ -161,15 +160,25 @@ body {
 }
 
 @keyframes pulse {
-  0% { transform: scale(0.5); opacity: 1; }
-  50% { transform: scale(2); opacity: 0.6; }
-  100% { transform: scale(0.5); opacity: 1; }
+  0% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(2);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
 }
 
 .nav-container,
 .header-container,
 .footer-container {
   background-color: #10202d;
+  width: 100%;
 }
 
 .header-container {
@@ -178,6 +187,10 @@ body {
   align-items: center;
   overflow: hidden;
   text-align: center;
+}
+
+.header-text {
+  padding: 2px;
 }
 
 .header-content {
@@ -232,8 +245,7 @@ body {
   position: relative;
   z-index: 2;
   opacity: 0;
-  animation:
-  fadeUp 1s ease forwards;
+  animation: fadeUp 1s ease forwards;
   animation-delay: 0.9s, 2s;
 }
 
@@ -251,12 +263,20 @@ body {
 
 .about-skill {
   background-color: #f7f7f7;
-  margin: 20px 0;
-  padding: 0 93px;
+  margin: 20px auto;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 25px;
 }
 
 .about-me {
   padding-right: 93px;
+}
+
+@media (max-width: 900px) {
+  .about-me {
+    padding-right: 30px;
+  }
 }
 
 .about-skill-title {
@@ -272,12 +292,15 @@ body {
   line-height: 28px;
   font-weight: 500;
   text-align: justify;
+  word-spacing: 2px;
   font-size: 1.09rem;
 
   opacity: 0;
   animation: slideLeftFade 0.8s ease forwards;
   animation-delay: 0.5s;
 }
+
+
 
 @keyframes slideLeftFade {
   from {
@@ -300,20 +323,20 @@ body {
   animation: slideRightFade 0.8s ease forwards;
 }
 
-@keyframes slideRightFade{
-    from {
-      opacity: 0;
-      transform: translateX(35px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
+@keyframes slideRightFade {
+  from {
+    opacity: 0;
+    transform: translateX(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .contact-me,
 .work {
-  padding: 0 95px;
+  padding: 0 25px;
   margin-bottom: 30px;
 }
 
@@ -351,9 +374,10 @@ body {
   font-size: 16px;
   color: #5f6b76;
   font-weight: bold;
+
 }
 
-.step-companies{
+.step-companies {
   font-size: 16px;
   color: #8b5e3c;
   margin-top: 5px;
@@ -365,11 +389,12 @@ body {
   color: #1e293b;
   margin-top: 16px;
   padding-left: 10px;
-  line-height: 26px;
+  line-height: 22px;
 }
 
-.step-points{
-  margin-bottom: 5px;
+.step-points {
+  margin-bottom: 10px;
+  text-align: justify;
 }
 
 .footer-text {
