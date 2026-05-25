@@ -275,8 +275,6 @@ body {
   margin-bottom: 20px;
   text-align: center;
   position: relative;
-
-  animation: slideLeftFade 0.8s ease forwards;
 }
 
 .about-paragraph {
@@ -294,21 +292,6 @@ body {
   border-left: 1px solid rgba(199, 166, 103, 0.25);
 }
 
-#ph-1 {
-  opacity: 0;
-  animation: slideLeftFade 0.8s ease forwards;
-  animation-delay: 0.5s;
-}
-#ph-2 {
-  opacity: 0;
-  animation: slideLeftFade 0.8s ease forwards;
-  animation-delay: 0.8s;
-}
-#ph-3 {
-  opacity: 0;
-  animation: slideLeftFade 0.8s ease forwards;
-  animation-delay: 1.2s;
-}
 
 .about-paragraph:hover {
   border-left-color: #10202d;
@@ -322,18 +305,6 @@ body {
   color: #10202d;
 }
 
-@keyframes slideLeftFade {
-  from {
-    opacity: 0;
-    transform: translateX(-40px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
 .skill-title {
   color: #c7a667;
   font-size: 35px;
@@ -341,18 +312,6 @@ body {
   margin: 55px 0 5px 0;
   text-align: center;
 
-  animation: slideRightFade 0.8s ease forwards;
-}
-
-@keyframes slideRightFade {
-  from {
-    opacity: 0;
-    transform: translateX(35px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
 }
 
 .tech-stack-container {
@@ -432,21 +391,6 @@ body {
 .timeline-item.show-item {
   opacity: 1;
   transform: translateY(0);
-}
-
-.timeline-item.show-item .step-titles {
-  animation: fadeText 0.8s ease forwards;
-}
-
-@keyframes fadeText {
-  from {
-    opacity: 0;
-    transform: translateX(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
 }
 
 .footer-text {

@@ -28,4 +28,6 @@ Personal portfolio website showcasing my projects, skills, and experience.
 #### [Floating stars](https://www.sliderrevolution.com/resources/css-animated-background/)
 #### [React Scroll](https://www.npmjs.com/package/react-scroll)
 #### [React Icons](https://react-icons.github.io/react-icons/)
+#### [Motion](https://www.npmjs.com/package/framer-motion)
+
 

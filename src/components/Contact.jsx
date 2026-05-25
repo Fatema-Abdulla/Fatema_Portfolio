@@ -1,3 +1,5 @@
+import { motion } from "motion/react"
+
 import { useState } from "react"
 import { TextField, Button, Box, Alert } from "@mui/material"
 
@@ -53,12 +55,51 @@ const Contact = () => {
     }
   }
 
+  const container = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.12,
+      },
+    },
+  }
+
+  const item = {
+    hidden: { opacity: 0, scale: 0.95, filter: "blur(6px)" },
+    show: {
+      opacity: 1,
+      scale: 1,
+      filter: "blur(0px)",
+      transition: { duration: 0.5 },
+    },
+  }
+
   return (
-    <div className="contact-me">
-      <h2 className="contact-title">Contact Me</h2>
-      <p className="contact-des">
+    <motion.div
+      className="contact-me"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.6 }}
+    >
+      <motion.h2
+        className="contact-title"
+        initial={{ opacity: 0, y: 15 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        Contact Me
+      </motion.h2>
+
+      <motion.p
+        className="contact-des"
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+      >
         Please get in contact with me if you have any questions.
-      </p>
+      </motion.p>
+
       <Box
         sx={{
           maxWidth: 600,
@@ -71,69 +112,101 @@ const Contact = () => {
         }}
       >
         {success && (
-          <Alert severity="success" sx={{ mt: 2, mb: 1 }}>
-            Email Sent Successfully!
-          </Alert>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4 }}
+          >
+            <Alert severity="success" sx={{ mt: 2, mb: 1 }}>
+              Email Sent Successfully!
+            </Alert>
+          </motion.div>
         )}
 
         <Box component="form" onSubmit={handleSubmit}>
-          <TextField
-            fullWidth
-            label="Your Name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            margin="normal"
-            required
-          />
-
-          <TextField
-            fullWidth
-            label="Your Email"
-            name="email"
-            type="email"
-            value={formData.email}
-            onChange={handleChange}
-            margin="normal"
-            required
-          />
-
-          <TextField
-            fullWidth
-            label="Your Message"
-            name="description"
-            value={formData.description}
-            onChange={handleChange}
-            margin="normal"
-            multiline
-            rows={4}
-            required
-          />
-
-          <Button
-            type="submit"
-            variant="contained"
-            sx={{ mt: 2, backgroundColor: "#10202d" }}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.4 }}
           >
-            Send Message
-          </Button>
-          <Button
-            type="reset"
-            variant="outlined"
-            onClick={handleReset}
-            sx={{
-              mt: 2,
-              ml: 1.5,
-              backgroundColor: "transparency",
-              color: "#10202d",
-              border: "solid 1px #10202d",
-            }}
+            <TextField
+              fullWidth
+              label="Your Name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              margin="normal"
+              required
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
           >
-            Reset
-          </Button>
+            <TextField
+              fullWidth
+              label="Your Email"
+              name="email"
+              type="email"
+              value={formData.email}
+              onChange={handleChange}
+              margin="normal"
+              required
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+          >
+            <TextField
+              fullWidth
+              label="Your Message"
+              name="description"
+              value={formData.description}
+              onChange={handleChange}
+              margin="normal"
+              multiline
+              rows={4}
+              required
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
+            style={{ display: "flex", gap: "12px" }}
+          >
+            <Button
+              type="submit"
+              variant="contained"
+              sx={{ mt: 2, backgroundColor: "#10202d" }}
+            >
+              Send Message
+            </Button>
+
+            <Button
+              type="reset"
+              variant="outlined"
+              onClick={handleReset}
+              sx={{
+                mt: 2,
+                ml: 1.5,
+                backgroundColor: "transparent",
+                color: "#10202d",
+                border: "solid 1px #10202d",
+              }}
+            >
+              Reset
+            </Button>
+          </motion.div>
         </Box>
       </Box>
-    </div>
+    </motion.div>
   )
 }
 

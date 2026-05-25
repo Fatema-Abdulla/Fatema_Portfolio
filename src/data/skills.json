@@ -38,15 +38,15 @@
     ],
     "frameworksLibraries": [
       {
-        "name": "NodeJS",
+        "name": "Node.js",
         "icon": "Node JS.webp"
       },
       {
-        "name": "ExpressJS",
+        "name": "Express.js",
         "icon": "ExpressJS.png"
       },
       {
-        "name": "React",
+        "name": "React.js",
         "icon": "React.png"
       },
       {

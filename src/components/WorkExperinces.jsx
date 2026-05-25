@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import { motion } from "motion/react"
 import "../App.css"
 
 import Box from "@mui/material/Box"
@@ -14,7 +14,7 @@ const steps = [
   {
     id: 1,
     title: "IT Specialist",
-    company: "STC Bahrain",
+    company: "Microlink Solutions [STC Bahrain]",
     date: "Jan 2026 - Present",
     description: [
       "Leverage CRM tools to access order details.",
@@ -51,34 +51,15 @@ const steps = [
 ]
 
 const WorkExperinces = () => {
-  const [visibleItems, setVisibleItems] = useState([])
-  const itemRefs = useRef({})
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const id = entry.target.dataset.id
-
-          if (entry.isIntersecting) {
-            setVisibleItems((prev) => [...new Set([...prev, id])])
-          }
-        })
-      },
-      {
-        threshold: 0.5,
-      }
-    )
-
-    Object.values(itemRefs.current).forEach((el) => {
-      if (el) observer.observe(el)
-    })
-
-    return () => observer.disconnect()
-  }, [])
-
   return (
-    <div className="work">
+    <Box
+      className="work"
+      component={motion.div}
+      initial={{ opacity: 0, x: -50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+    >
       <h2 className="work-title">Work Experiences</h2>
 
       <Box
@@ -90,52 +71,44 @@ const WorkExperinces = () => {
         }}
       >
         <Timeline position="right">
-          {steps.map((step) => {
-            const isVisible = visibleItems.includes(String(step.id))
-
-            return (
-              <TimelineItem
-                key={step.id}
-                ref={(el) => (itemRefs.current[step.id] = el)}
-                data-id={step.id}
-                className={`timeline-item ${isVisible ? "show-item" : ""}`}
+          {steps.map((step) => (
+            <TimelineItem key={step.id}>
+              <TimelineOppositeContent
+                sx={{
+                  color: "text.secondary",
+                  flex: { xs: 0.3, md: 1 },
+                  minWidth: { xs: "70px", md: "auto" },
+                  paddingRight: { xs: 1, md: 2 },
+                }}
               >
-                <TimelineOppositeContent
-                  sx={{
-                    color: "text.secondary",
-                    flex: { xs: 0.3, md: 1 },
-                    minWidth: { xs: "70px", md: "auto" },
-                    paddingRight: { xs: 1, md: 2 },
-                  }}
-                >
-                  <div className="step-dates">{step.date}</div>
-                </TimelineOppositeContent>
+                <div className="step-dates">{step.date}</div>
+              </TimelineOppositeContent>
 
-                <TimelineSeparator>
-                  <TimelineDot />
-                  <TimelineConnector />
-                </TimelineSeparator>
+              <TimelineSeparator>
+                <TimelineDot />
+                <TimelineConnector />
+              </TimelineSeparator>
 
-                <TimelineContent>
-                  <div className="step-titles">{step.title}</div>
-                  <div className="step-companies">{step.company}</div>
+              <TimelineContent>
+                <div className="step-titles">{step.title}</div>
 
-                  <ul className="step-descriptions">
-                    {step.description.map((item, index) => (
-                      <li className="step-points" key={index}>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                <div className="step-companies">{step.company}</div>
 
-                  <br />
-                </TimelineContent>
-              </TimelineItem>
-            )
-          })}
+                <ul className="step-descriptions">
+                  {step.description.map((item, index) => (
+                    <li className="step-points" key={index}>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+
+                <br />
+              </TimelineContent>
+            </TimelineItem>
+          ))}
         </Timeline>
       </Box>
-    </div>
+    </Box>
   )
 }
 
