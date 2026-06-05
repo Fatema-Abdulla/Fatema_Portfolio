@@ -4,45 +4,102 @@
     "name": "Guessor",
     "shortDescription": "A fun word guessing game with multiple categories and timed rounds.",
     "tags": ["HTML", "CSS", "JavaScript"],
-    "description": "A word guessing game featuring categories like fruits, animals, and countries. Players must guess the correct letters within one minute per round. Correct guesses increase the score, while failure results in losing the round.",
-    "tools": ["Figma", "Visual Studio Code", "GitHub"],
-    "githubLink": "https://github.com/Fatema-Abdulla/hangman-game.git"
+    "githubLink": "https://github.com/Fatema-Abdulla/hangman-game.git",
+    "image": "Hangman-Game.png",
+    "details": {
+      "description": "A word guessing game featuring categories like fruits, animals, and countries. Players must guess the correct letters within one minute per round. Correct guesses increase the score, while failure results in losing the round.",
+      "tools": ["Figma", "Visual Studio Code", "GitHub"],
+      "projectType": "Individual",
+      "projectContext": "Bootcamp Project at General Assembly",
+      "highlights": [
+        "Implemented bilingual support (English/Arabic)",
+        "Built a dynamic on-screen keyboard with state management",
+        "Developed countdown timer logic for timed gameplay",
+        "Created score tracking across multiple rounds",
+        "Managed game state transitions for win/loss scenarios"
+      ]
+    }
   },
   {
     "id": 2,
-    "name": "SkillSync",
-    "shortDescription": "An online learning platform with course management and progress tracking.",
-    "tags": ["React.js", "Node.js", "Express.js", "MongoDB"],
-    "description": "An online learning platform where instructors can create and manage courses, and students can enroll, learn, and track their progress. Includes dashboards, lesson pages, and real-time progress tracking.",
-    "tools": ["Figma", "Visual Studio Code", "MongoDB Compass", "GitHub"],
-    "githubLink": "https://github.com/izZERO/SkillSync-Frontend.git",
-    "githubLink_Backend": "https://github.com/izZERO/SkillSync-Backend.git"
-  },
-  {
-    "id": 3,
     "name": "Evenvite",
     "shortDescription": "A platform for creating and managing public and private events.",
     "tags": ["Node.js", "Express.js", "MongoDB"],
-    "description": "An event creation platform allowing users to create private or public events. Guests can receive invitation cards and respond to event organizers.",
-    "tools": ["Figma", "Visual Studio Code", "MongoDB Compass", "GitHub"],
-    "githubLink": "https://github.com/Fatema-227/Project2-Event-Organizer.git"
+    "githubLink": "https://github.com/Fatema-Abdulla/Evenvite-Project",
+    "image": "Evenvite.png",
+    "details": {
+      "description": "A platform for creating and managing events with invitation features. Users can choose whether an event is private or public. For private events, invitations can be sent to selected guests, while public events allow users to reserve their spot. Each invitation includes a digital card where guests can confirm their attendance and leave a short message for the event organizer.",
+      "tools": ["Figma", "Visual Studio Code", "MongoDB Compass", "GitHub"],
+      "projectType": "Team Project",
+      "projectContext": "Bootcamp Project at General Assembly",
+      "highlights": [
+        "Built RESTful APIs for event and invitation management",
+        "Designed MongoDB data models",
+        "Implemented private and public event access control",
+        "Developed guest attendance confirmation workflow",
+        "Created dynamic digital invitation card functionality"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "name": "SkillSync",
+    "shortDescription": "An online learning platform with course management and progress tracking.",
+    "tags": ["React.js", "Node.js", "Express.js", "MongoDB"],
+    "githubLink": "https://github.com/izZERO/SkillSync-Frontend.git",
+    "githubLink_Backend": "https://github.com/izZERO/SkillSync-Backend.git",
+    "image": "SkillSync.png",
+    "details": {
+      "description": "An online learning platform where instructors can create and manage courses, and students can enroll, learn, and track their progress. Includes dashboards, lesson pages, and real-time progress tracking.",
+      "tools": ["Figma", "Visual Studio Code", "MongoDB Compass", "GitHub"],
+      "projectType": "Team Project",
+      "projectContext": "Bootcamp Project at General Assembly",
+      "highlights": [
+        "Integrated frontend and backend services",
+        "Developed instructor dashboard features",
+        "Restricted lesson access to enrolled students",
+        "Integrated Markdown for lesson content display",
+        "Implemented student progress tracking functionality"
+      ]
+    }
   },
   {
     "id": 4,
     "name": "Roompickr",
     "shortDescription": "A flexible platform for booking rooms and shared spaces.",
     "tags": ["Python", "Django", "PostgreSQL"],
-    "description": "A platform for booking spaces such as meeting rooms, workspaces, study halls, and event venues. Designed to provide a safe, flexible, and inclusive booking experience.",
-    "tools": ["Figma", "Visual Studio Code", "pgAdmin 4", "GitHub"],
-    "githubLink": "https://github.com/Fatema-Abdulla/RoomPickr.git"
+    "githubLink": "https://github.com/Fatema-Abdulla/RoomPickr.git",
+    "image": "RoomPicker.png",
+    "details": {
+      "description": "A platform for booking spaces such as meeting rooms, workspaces, study halls, and event venues. Designed to provide a safe, flexible, and inclusive booking experience.",
+      "tools": ["Figma", "Visual Studio Code", "pgAdmin 4", "GitHub"],
+      "projectType": "Team Project",
+      "projectContext": "Bootcamp Project at General Assembly",
+      "highlights": [
+        "Implemented room and venue booking functionality",
+        "Developed availability and reservation management system",
+        "Generated PDF invoices for bookings",
+        "Built user authentication and profile management"
+      ]
+    }
   },
   {
     "id": 5,
     "name": "Equalsy",
     "shortDescription": "A simple calculator with session-based history tracking.",
     "tags": ["HTML", "CSS", "JavaScript"],
-    "description": "A platform for booking spaces such as meeting rooms, workspaces, study halls, and event venues. Designed to provide a safe, flexible, and inclusive booking experience.",
-    "tools": ["Figma", "Visual Studio Code", "GitHub"],
-    "githubLink": "https://github.com/Fatema-Abdulla/calculator.git"
+    "githubLink": "https://github.com/Fatema-Abdulla/calculator.git",
+    "image": "Calculator.png",
+    "details": {
+      "description": "A simple and user-friendly calculator that performs basic and advanced calculations while keeping a temporary history of all operations during the current session. Users can see their recent calculations in a clear format, and the history resets automatically when the session ends. Features include addition, subtraction, multiplication, division.",
+      "tools": ["Figma", "Visual Studio Code", "GitHub"],
+      "projectType": "Individual",
+      "projectContext": "Personal Project",
+      "highlights": [
+        "Implemented basic arithmetic operations",
+        "Integrated Math.js for expression evaluation",
+        "Built session-based calculation history tracking"
+      ]
+    }
   }
 ]

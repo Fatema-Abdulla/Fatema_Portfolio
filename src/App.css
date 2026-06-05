@@ -292,7 +292,6 @@ body {
   border-left: 1px solid rgba(199, 166, 103, 0.25);
 }
 
-
 .about-paragraph:hover {
   border-left-color: #10202d;
   transform: translateX(4px);
@@ -311,7 +310,6 @@ body {
   font-weight: 800;
   margin: 55px 0 5px 0;
   text-align: center;
-
 }
 
 .tech-stack-container {
@@ -423,4 +421,106 @@ body {
 .my-accounts:hover {
   color: #d6b77a;
   transform: translateY(-2px);
+}
+
+.header-project {
+  background: #10202d;
+  background-size: 400% 400%;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  text-align: center;
+}
+
+.header-project-text {
+  margin: 30px 0;
+}
+
+.header-title-project {
+  position: relative;
+  z-index: 2;
+  color: #f7f7f7;
+  font-size: 58px;
+  font-weight: 800;
+  margin: 14px 0 12px 0;
+  letter-spacing: 1px;
+  animation: fadeUp 1s ease forwards;
+}
+
+#spin {
+  color: #c7a667;
+}
+
+#spin::after {
+  content: "";
+  animation: spin 6s linear infinite;
+}
+
+@keyframes spin {
+  0%,
+  19% {
+    content: "Projects";
+  }
+  20%,
+  39% {
+    content: "Works";
+  }
+  40%,
+  59% {
+    content: "Platforms";
+  }
+  60%,
+  79% {
+    content: "Solutions";
+  }
+  80%,
+  100% {
+    content: "Websites";
+  }
+}
+
+.container-project-body {
+  background: #f7f7f7;
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(320px, 350px));
+
+  justify-content: center;
+  justify-items: center;
+
+  gap: 26px;
+
+  overflow: hidden;
+  text-align: left;
+  margin: 50px 0;
+}
+
+.card-projects {
+  transition: all 0.3s ease;
+}
+
+.card-projects:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.card-projects img {
+  transition: transform 0.4s ease;
+}
+
+.card-projects:hover img {
+  transform: scale(1.05);
+}
+
+.container-content{
+  min-height: calc(100vh - 34px);
+}
+
+.footer-section{
+  position: relative;
 }

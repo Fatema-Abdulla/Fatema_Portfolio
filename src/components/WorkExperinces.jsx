@@ -14,7 +14,7 @@ const steps = [
   {
     id: 1,
     title: "IT Specialist",
-    company: "Microlink Solutions [STC Bahrain]",
+    company: "Microlink Solutions at STC Bahrain",
     date: "Jan 2026 - Present",
     description: [
       "Leverage CRM tools to access order details.",

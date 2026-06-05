@@ -1,12 +1,12 @@
 import "../App.css"
-import Box from "@mui/material/Box"
 import HeaderFooter from "../components/HeaderFooter"
-
+import ProjectCard from "../components/ProjectCard"
 
 const Projects = () => {
   return (
     <div>
       <HeaderFooter />
+      <ProjectCard />
     </div>
   )
 }
