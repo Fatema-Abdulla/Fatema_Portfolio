@@ -485,17 +485,11 @@ body {
 .container-project-body {
   background: #f7f7f7;
   width: 100%;
-
   display: grid;
-
   grid-template-columns: repeat(auto-fit, minmax(320px, 350px));
-
   justify-content: center;
   justify-items: center;
-
   gap: 26px;
-
-  overflow: hidden;
   text-align: left;
   margin: 50px 0;
 }
