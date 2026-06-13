@@ -18,98 +18,151 @@ const ProjectCard = () => {
   return (
     <Box
       className="container-project-body"
-      sx={{ flexGrow: 1, position: "relative" }}
+      sx={{
+        flexGrow: 1,
+        position: "relative",
+        backgroundColor: "#F7F7F7",
+      }}
     >
       {projectsData.map((project) => (
         <Card
+          key={project.id}
           className="card-projects"
           sx={{
-            maxWidth: 345,
-            marginBottom: "8px",
+            width: "100%",
             display: "flex",
             flexDirection: "column",
-            height: "100%",
+            borderRadius: "20px",
             overflow: "hidden",
+            backgroundColor: "#FFFFFF",
+            border: "1px solid rgba(16,32,45,0.08)",
+            boxShadow: "0 10px 30px rgba(16,32,45,0.08)",
+            transition: "all 0.3s ease",
+
+            "&:hover": {
+              transform: "translateY(-4px)",
+              boxShadow: "0 18px 40px rgba(16,32,45,0.12)",
+            },
           }}
-          key={project.id}
         >
           <CardMedia
             component="img"
             alt={project.name}
             image={`/images/${project.image}`}
             sx={{
-              width: "100%",
-              height: "auto",
+              height: 260,
+              objectFit: "cover",
             }}
           />
-          <CardContent sx={{ flexGrow: 1 }}>
+
+          <CardContent
+            sx={{
+              flexGrow: 1,
+              display: "flex",
+              flexDirection: "column",
+              gap: 2,
+              backgroundColor: "#FFFFFF",
+            }}
+          >
             <Typography
-              gutterBottom
               variant="h5"
-              component="div"
-              sx={{ color: "#10202d", fontWeight: 700 }}
+              sx={{
+                color: "#10202D",
+                fontWeight: 700,
+                letterSpacing: "-0.3px",
+              }}
             >
               {project.name}
             </Typography>
-            <Typography variant="body2" sx={{ color: "text.secondary" }}>
-              {project.shortDescription}
-            </Typography>
-            {project.tags.map((tag, index) => (
-              <Chip
-                key={index}
-                label={tag}
-                size="small"
-                sx={{
-                  mt: 1.5,
-                  mr: 0.7,
-                  bgcolor: "#f3ebda",
-                  color: "#4a3b18",
-                  border: "1px solid #c7a667",
-                  fontWeight: 500,
-                }}
-              />
-            ))}
+
+            <Box
+              sx={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: 1,
+              }}
+            >
+              {project.tags.map((tag, index) => (
+                <Chip
+                  key={index}
+                  label={tag}
+                  size="small"
+                  sx={{
+                    backgroundColor: "#F5F5F5",
+                    color: "#10202D",
+                    border: "1px solid #E5E7EB",
+                    fontWeight: 500,
+
+                    "& .MuiChip-label": {
+                      px: 1,
+                    },
+                  }}
+                />
+              ))}
+            </Box>
           </CardContent>
-          <CardActions sx={{ mt: "auto", gap: 0.5 }}>
+
+          <CardActions
+            sx={{
+              mt: "auto",
+              px: 2,
+              pb: 2,
+              gap: 1.5,
+            }}
+          >
             <Button
               size="small"
               target="_blank"
               href={project.githubLink}
               sx={{
-                color: "#10202d",
+                flex: 1,
+                color: "#10202D",
                 fontWeight: 600,
-                border: "1px solid #10202d",
+                border: "1px solid #10202D",
+                backgroundColor: "#FFFFFF",
                 textTransform: "none",
+                borderRadius: "10px",
 
                 "&:hover": {
-                  backgroundColor: "#10202D10",
+                  backgroundColor: "#F7F7F7",
+                  borderColor: "#10202D",
                 },
               }}
             >
-              GitHub{" "}
+              GitHub
               <FiExternalLink
-                style={{ marginLeft: "4px", marginTop: "-4px" }}
+                style={{
+                  marginLeft: 5,
+                  marginBottom: 2.7,
+                }}
               />
             </Button>
+
             <Button
               component={Link}
               to={`/projects/${project.name}`}
               size="small"
               sx={{
+                flex: 1,
                 backgroundColor: "#10202D",
-                color: "#fff",
+                color: "#FFFFFF",
                 fontWeight: 600,
                 border: "1px solid #10202D",
                 textTransform: "none",
+                borderRadius: "10px",
 
                 "&:hover": {
-                  backgroundColor: "#284660",
+                  backgroundColor: "#1B3448",
+                  borderColor: "#1B3448",
                 },
               }}
             >
-              More Details{" "}
+              Details
               <FiChevronRight
-                style={{ marginLeft: "3px", marginTop: "-2px" }}
+                style={{
+                  marginLeft: 4,
+                  marginBottom: 0.5,
+                }}
               />
             </Button>
           </CardActions>

@@ -2,7 +2,6 @@
   {
     "id": 1,
     "name": "Guessor",
-    "shortDescription": "A Hangman game that challenges players with diverse word categories and adjustable difficulty levels through different time and hint limits.",
     "tags": ["HTML", "CSS", "JavaScript"],
     "githubLink": "https://github.com/Fatema-Abdulla/hangman-game.git",
     "image": "Hangman-Game.png",
@@ -23,7 +22,6 @@
   {
     "id": 2,
     "name": "Evenvite",
-    "shortDescription": "An event management platform that allows users to create public or private events, manage invitations, and track guest responses.",
     "tags": ["Node.js", "Express.js", "MongoDB"],
     "githubLink": "https://github.com/Fatema-Abdulla/Evenvite-Project",
     "image": "Evenvite.png",
@@ -44,7 +42,6 @@
   {
     "id": 3,
     "name": "SkillSync",
-    "shortDescription": "An online learning platform where instructors create courses and lessons, while students enroll, learn, and track their progress.",
     "tags": ["React.js", "Node.js", "Express.js", "MongoDB"],
     "githubLink": "https://github.com/izZERO/SkillSync-Frontend.git",
     "githubLink_Backend": "https://github.com/izZERO/SkillSync-Backend.git",
@@ -66,7 +63,6 @@
   {
     "id": 4,
     "name": "Roompickr",
-    "shortDescription": "A space booking platform that allows users to easily discover and reserve meeting rooms, workspaces, and study areas.",
     "tags": ["Python", "Django", "PostgreSQL"],
     "githubLink": "https://github.com/Fatema-Abdulla/RoomPickr.git",
     "image": "RoomPicker.png",
@@ -86,7 +82,6 @@
   {
     "id": 5,
     "name": "Equalsy",
-    "shortDescription": "A calculator app that performs basic arithmetic operations and stores a temporary session-based history.",
     "tags": ["HTML", "CSS", "JavaScript"],
     "githubLink": "https://github.com/Fatema-Abdulla/calculator.git",
     "image": "Calculator.png",
