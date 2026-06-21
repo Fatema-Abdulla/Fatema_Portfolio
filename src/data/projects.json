@@ -5,13 +5,16 @@
     "tags": ["HTML", "CSS", "JavaScript"],
     "githubLink": "https://github.com/Fatema-Abdulla/hangman-game.git",
     "image": "Hangman-Game.png",
+    "shortDescription": "A feature-rich Hangman game with multiple categories and adjustable difficulty levels, offering both relaxed and challenging gameplay experiences.",
     "details": {
+      "cover": "Project1.png",
       "description": "This Hangman game includes a broad collection of words across different categories, creating a more engaging and varied gameplay experience. Players can select between Easy and Hard difficulty levels, each designed with its own balance of time and hints. Easy mode provides a longer time limit and additional hints for a relaxed experience, while Hard mode challenges players with less time and fewer hints, requiring quicker thinking and stronger vocabulary skills.",
       "tools": ["Figma", "Visual Studio Code", "GitHub"],
       "projectType": "Individual",
+      "timeline": "One Week",
       "projectContext": "Bootcamp Project at General Assembly",
       "highlights": [
-        "Implemented bilingual support (English/Arabic)",
+        "Implemented multi-language support (English/Arabic)",
         "Built a dynamic on-screen keyboard with state management",
         "Developed countdown timer logic for timed gameplay",
         "Created score tracking across multiple rounds",
@@ -26,9 +29,11 @@
     "githubLink": "https://github.com/Fatema-Abdulla/Evenvite-Project",
     "image": "Evenvite.png",
     "details": {
+      "cover": "Project2.png",
       "description": "Evenvite is an event management platform designed to simplify the process of creating and organizing events. Users can host public events that anyone can reserve or create private events with a selected guest list. Invited guests receive a digital invitation card where they can view event details and send respond directly to the organizer, making communication and attendance management seamless and efficient.",
       "tools": ["Figma", "Visual Studio Code", "MongoDB Compass", "GitHub"],
       "projectType": "Team Project",
+      "timeline": "One Week",
       "projectContext": "Bootcamp Project at General Assembly",
       "highlights": [
         "Built RESTful APIs for event and invitation management",
@@ -43,13 +48,15 @@
     "id": 3,
     "name": "SkillSync",
     "tags": ["React.js", "Node.js", "Express.js", "MongoDB"],
-    "githubLink": "https://github.com/izZERO/SkillSync-Frontend.git",
-    "githubLink_Backend": "https://github.com/izZERO/SkillSync-Backend.git",
+    "githubLink": "https://github.com/Fatema-Abdulla/SkillSync-Frontend",
+    "githubLink_Backend": "https://github.com/Fatema-Abdulla/SkillSync-Backend",
     "image": "SkillSync.png",
     "details": {
+      "cover": "Project3.png",
       "description": "An e-learning platform designed for both instructors and students. Instructors can create and manage courses with structured lessons, while students can enroll in courses, access learning materials, and monitor their progress. The platform includes dedicated dashboards, lesson pages for educational content, and real-time progress tracking to provide an organized and engaging learning experience.",
       "tools": ["Figma", "Visual Studio Code", "MongoDB Compass", "GitHub"],
       "projectType": "Team Project",
+      "timeline": "One Week",
       "projectContext": "Bootcamp Project at General Assembly",
       "highlights": [
         "Integrated frontend and backend services",
@@ -67,9 +74,11 @@
     "githubLink": "https://github.com/Fatema-Abdulla/RoomPickr.git",
     "image": "RoomPicker.png",
     "details": {
+      "cover": "Project4.png",
       "description": "A modern space reservation platform designed to simplify the process of finding and booking suitable environments for work, study, or collaboration. Users can browse available meeting rooms, workspaces, and study halls, then reserve them through a seamless and user-friendly experience. The platform focuses on accessibility, flexibility, and convenience, helping individuals find the right space to meet their needs with confidence.",
       "tools": ["Figma", "Visual Studio Code", "pgAdmin 4", "GitHub"],
       "projectType": "Team Project",
+      "timeline": "One Week",
       "projectContext": "Bootcamp Project at General Assembly",
       "highlights": [
         "Implemented room and venue booking functionality",
@@ -86,9 +95,11 @@
     "githubLink": "https://github.com/Fatema-Abdulla/calculator.git",
     "image": "Calculator.png",
     "details": {
+      "cover": "Project5.png",
       "description": "A simple and intuitive calculator designed for everyday calculations. The application supports essential arithmetic operations, including addition, subtraction, multiplication, and division, while maintaining a session-based history of recent calculations. Users can easily review their previous operations, and the history is automatically cleared when the session ends, ensuring a lightweight and straightforward experience.",
       "tools": ["Figma", "Visual Studio Code", "GitHub"],
       "projectType": "Individual",
+      "timeline": "three weeks",
       "projectContext": "Personal Project",
       "highlights": [
         "Implemented basic arithmetic operations",
