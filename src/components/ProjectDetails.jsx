@@ -8,6 +8,7 @@ import {
   Stack,
   Chip,
   Link,
+  Breadcrumbs,
 } from "@mui/material"
 
 import {
@@ -20,9 +21,26 @@ import {
 
 import { useParams } from "react-router-dom"
 import projects from "../data/projects.json"
+import { motion } from "motion/react"
 
 const DetailRow = ({ icon, label, value }) => (
   <Box
+    component={motion.div}
+    initial={{
+      opacity: 0,
+      y: 18,
+    }}
+    whileInView={{
+      opacity: 1,
+      y: 0,
+    }}
+    viewport={{
+      once: true,
+      amount: 0.4,
+    }}
+    transition={{
+      duration: 0.35,
+    }}
     sx={{
       display: "flex",
       alignItems: "center",
@@ -72,18 +90,36 @@ const ProjectDetails = () => {
 
   return (
     <Box
+      component={motion.div}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.45 }}
       sx={{
         background: "#F7F7F7",
         minHeight: "100vh",
       }}
     >
       <Box
+        component={motion.div}
+        initial={{
+          opacity: 0,
+          scale: 1.03,
+        }}
+        animate={{
+          opacity: 1,
+          scale: 1,
+        }}
+        transition={{
+          duration: 0.7,
+        }}
         sx={{
           position: "relative",
+
           height: {
             xs: "45vh",
             md: "60vh",
           },
+
           overflow: "hidden",
         }}
       >
@@ -101,23 +137,88 @@ const ProjectDetails = () => {
         <Box
           sx={{
             position: "absolute",
+
             inset: 0,
+
             background:
               "linear-gradient(rgba(16,32,45,.35), rgba(16,32,45,.85))",
+
             display: "flex",
+
             alignItems: "center",
           }}
-        ></Box>
+        />
       </Box>
 
       <Container
+        component={motion.div}
+        initial={{
+          opacity: 0,
+          y: 35,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+        }}
+        viewport={{
+          once: true,
+          amount: 0.15,
+        }}
+        transition={{
+          duration: 0.55,
+          delay: 0.15,
+        }}
         maxWidth="lg"
         sx={{
           py: 10,
         }}
       >
+        <Breadcrumbs
+          separator="›"
+          sx={{
+            marginTop: "-30px",
+            marginBottom: "22px",
+          }}
+        >
+          <Link underline="hover" color="inherit" href="/projects">
+            Projects
+          </Link>
+
+          <Typography
+            sx={{
+              color: "text.primary",
+            }}
+          >
+            <Link
+              underline="hover"
+              color="inherit"
+              href={`/projects/${project.name}`}
+            >
+              {project.name}
+            </Link>
+          </Typography>
+        </Breadcrumbs>
+
         <Grid container spacing={10}>
-          <Grid size={{ xs: 12, md: 6 }}>
+          <Grid
+            component={motion.div}
+            initial={{
+              opacity: 0,
+              x: -40,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.25,
+            }}
+            transition={{
+              delay: 0.2,
+            }}
+            size={{ xs: 12, md: 6 }}
+          >
             <Typography
               variant="h3"
               sx={{
@@ -139,7 +240,23 @@ const ProjectDetails = () => {
               {project.details.description}
             </Typography>
 
-            <Stack>
+            <Stack
+              component={motion.div}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{
+                once: true,
+                amount: 0.2,
+              }}
+              variants={{
+                hidden: {},
+                visible: {
+                  transition: {
+                    staggerChildren: 0.12,
+                  },
+                },
+              }}
+            >
               <DetailRow
                 icon={<FiGlobe />}
                 label="Tech Stack"
@@ -179,31 +296,52 @@ const ProjectDetails = () => {
                   </Link>
                 }
               />
-              {project.githubLink_Backend ? <DetailRow
-                icon={<FiExternalLink />}
-                label="Backend Repository"
-                value={
-                  <Link
-                    href={project.githubLink_Backend}
-                    target="_blank"
-                    underline="none"
-                    sx={{
-                      color: "#C7A667",
-                      fontWeight: 700,
 
-                      "&:hover": {
-                        opacity: 0.8,
-                      },
-                    }}
-                  >
-                    View Repository →
-                  </Link>
-                }
-              /> : null}
+              {project.githubLink_Backend ? (
+                <DetailRow
+                  icon={<FiExternalLink />}
+                  label="Backend Repository"
+                  value={
+                    <Link
+                      href={project.githubLink_Backend}
+                      target="_blank"
+                      underline="none"
+                      sx={{
+                        color: "#C7A667",
+                        fontWeight: 700,
+
+                        "&:hover": {
+                          opacity: 0.8,
+                        },
+                      }}
+                    >
+                      View Repository →
+                    </Link>
+                  }
+                />
+              ) : null}
             </Stack>
           </Grid>
 
-          <Grid size={{ xs: 12, md: 6 }}>
+          <Grid
+            component={motion.div}
+            initial={{
+              opacity: 0,
+              x: 40,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.25,
+            }}
+            transition={{
+              delay: 0.3,
+            }}
+            size={{ xs: 12, md: 6 }}
+          >
             <Typography
               variant="h3"
               sx={{
@@ -216,9 +354,26 @@ const ProjectDetails = () => {
             </Typography>
 
             <Stack spacing={3} mb={8}>
-              {project.details.highlights.map((item) => (
+              {project.details.highlights.map((item, index) => (
                 <Box
+                  component={motion.div}
                   key={item}
+                  initial={{
+                    opacity: 0,
+                    y: 12,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  viewport={{
+                    once: true,
+                    amount: 0.2,
+                  }}
+                  transition={{
+                    duration: 0.35,
+                    delay: index * 0.08,
+                  }}
                   sx={{
                     display: "flex",
                     gap: 2,
@@ -246,6 +401,22 @@ const ProjectDetails = () => {
             </Stack>
 
             <Box
+              component={motion.div}
+              initial={{
+                opacity: 0,
+                y: 24,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+                amount: 0.2,
+              }}
+              transition={{
+                duration: 0.55,
+              }}
               sx={{
                 borderTop: "1px solid #ECECEC",
                 pt: 5,
@@ -269,8 +440,26 @@ const ProjectDetails = () => {
                   gap: 2,
                 }}
               >
-                {project.details.tools.map((tool) => (
+                {project.details.tools.map((tool, index) => (
                   <Chip
+                    component={motion.div}
+                    initial={{
+                      opacity: 0,
+                      scale: 0.9,
+                      y: 10,
+                    }}
+                    whileInView={{
+                      opacity: 1,
+                      scale: 1,
+                      y: 0,
+                    }}
+                    viewport={{
+                      once: true,
+                    }}
+                    transition={{
+                      delay: index * 0.08,
+                      duration: 0.35,
+                    }}
                     key={tool}
                     label={tool}
                     sx={{
@@ -281,10 +470,11 @@ const ProjectDetails = () => {
                       px: 1,
                       height: 44,
                       fontSize: ".95rem",
+
                       "&:hover": {
                         background: "#10202D",
                         color: "#F7F7F7",
-                        transform: "translateY(-2px)",
+                        transform: "translateY(-3px)",
                         borderColor: "#10202D",
                       },
                     }}
