@@ -1,7 +1,7 @@
 import "../App.css"
+import * as React from "react"
 import { Link } from "react-router-dom"
 import { motion } from "motion/react"
-
 
 import Box from "@mui/material/Box"
 import Card from "@mui/material/Card"
@@ -11,12 +11,26 @@ import CardMedia from "@mui/material/CardMedia"
 import Button from "@mui/material/Button"
 import Typography from "@mui/material/Typography"
 import Chip from "@mui/material/Chip"
+import Popover from "@mui/material/Popover"
 
 import projectsData from "../data/projects.json"
 import { FiExternalLink, FiChevronRight } from "react-icons/fi"
-
+import { IoMdArrowDropdown } from "react-icons/io"
 
 const ProjectCard = () => {
+  const [anchorEl, setAnchorEl] = React.useState(null)
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget)
+  }
+
+  const handleClose = () => {
+    setAnchorEl(null)
+  }
+
+  const open = Boolean(anchorEl)
+  const id = open ? "simple-popover" : undefined
+
   return (
     <Box
       className="container-project-body"
@@ -130,34 +144,157 @@ const ProjectCard = () => {
                 gap: 1.5,
               }}
             >
-              <Button
-                size="small"
-                target="_blank"
-                href={project.githubLink}
-                sx={{
-                  flex: 1,
-                  color: "#10202D",
-                  fontWeight: 600,
-                  border: "1px solid #10202D",
-                  backgroundColor: "#FFFFFF",
-                  textTransform: "none",
-                  borderRadius: "10px",
+              {project.githubLink_Backend ? (
+                <>
+                  <Button
+                    size="small"
+                    aria-describedby={id}
+                    onClick={handleClick}
+                    sx={{
+                      flex: 1,
+                      color: "#10202D",
+                      fontWeight: 600,
+                      border: "1px solid #10202D",
+                      backgroundColor: "#FFFFFF",
+                      textTransform: "none",
+                      borderRadius: "10px",
 
-                  "&:hover": {
-                    backgroundColor: "#F7F7F7",
-                    borderColor: "#10202D",
-                  },
-                }}
-              >
-                GitHub
+                      "&:hover": {
+                        backgroundColor: "#F7F7F7",
+                        borderColor: "#10202D",
+                      },
+                    }}
+                  >
+                    GitHub
+                    <IoMdArrowDropdown
+                      style={{
+                        marginLeft: 5,
+                        marginBottom: 2.7,
+                      }}
+                    />
+                  </Button>
+                  <Popover
+                    id={id}
+                    open={open}
+                    anchorEl={anchorEl}
+                    onClose={handleClose}
+                    anchorOrigin={{
+                      vertical: "bottom",
+                      horizontal: "left",
+                    }}
+                    transformOrigin={{
+                      vertical: "top",
+                      horizontal: "left",
+                    }}
+                    slotProps={{
+                      paper: {
+                        sx: {
+                          mt: 1,
+                          ml: 1,
+                        },
+                      },
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                      }}
+                    >
+                      <Button
+                        target="_blank"
+                        href={project.githubLink}
+                        sx={{
+                          justifyContent: "space-between",
+                          width: "100%",
+                          px: 2.5,
+                          py: 1.7,
+                          color: "#C7A667",
+                          background: "transparent",
+                          borderBottom: "1px solid #ECECEC",
+                          borderRadius: 0,
+                          fontWeight: 600,
+                          fontSize: ".9rem",
+                          textTransform: "none",
 
-                <FiExternalLink
-                  style={{
-                    marginLeft: 5,
-                    marginBottom: 2.7,
+                          "&:hover": {
+                            background: "#FBF8F0",
+                            color: "#B8924F",
+                          },
+                        }}
+                      >
+                        Frontend Repository
+                        <FiExternalLink
+                          size={15}
+                          style={{
+                            marginLeft: 5,
+                            marginBottom: 2.7,
+                          }}
+                        />
+                      </Button>
+
+                      <Button
+                        target="_blank"
+                        href={project.githubLink_Backend}
+                        sx={{
+                          justifyContent: "space-between",
+                          width: "100%",
+                          px: 2.5,
+                          py: 1.7,
+                          color: "#C7A667",
+                          background: "transparent",
+                          borderRadius: 0,
+                          fontWeight: 600,
+                          fontSize: ".9rem",
+                          textTransform: "none",
+
+                          "&:hover": {
+                            background: "#FBF8F0",
+                            color: "#B8924F",
+                          },
+                        }}
+                      >
+                        Backend Repository
+                        <FiExternalLink
+                          size={15}
+                          style={{
+                            marginLeft: 5,
+                            marginBottom: 2.7,
+                          }}
+                        />
+                      </Button>
+                    </Box>
+                  </Popover>
+                </>
+              ) : (
+                <Button
+                  size="small"
+                  target="_blank"
+                  href={project.githubLink}
+                  sx={{
+                    flex: 1,
+                    color: "#10202D",
+                    fontWeight: 600,
+                    border: "1px solid #10202D",
+                    backgroundColor: "#FFFFFF",
+                    textTransform: "none",
+                    borderRadius: "10px",
+
+                    "&:hover": {
+                      backgroundColor: "#F7F7F7",
+                      borderColor: "#10202D",
+                    },
                   }}
-                />
-              </Button>
+                >
+                  GitHub
+                  <FiExternalLink
+                    style={{
+                      marginLeft: 5,
+                      marginBottom: 2.7,
+                    }}
+                  />
+                </Button>
+              )}
 
               <Button
                 component={Link}
@@ -180,7 +317,6 @@ const ProjectCard = () => {
                 }}
               >
                 Details
-
                 <FiChevronRight
                   style={{
                     marginLeft: 4,

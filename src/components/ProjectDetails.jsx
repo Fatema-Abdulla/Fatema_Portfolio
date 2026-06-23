@@ -97,6 +97,7 @@ const ProjectDetails = () => {
       sx={{
         background: "#F7F7F7",
         minHeight: "100vh",
+        overflow: "hidden",
       }}
     >
       <Box
@@ -137,14 +138,10 @@ const ProjectDetails = () => {
         <Box
           sx={{
             position: "absolute",
-
             inset: 0,
-
             background:
               "linear-gradient(rgba(16,32,45,.35), rgba(16,32,45,.85))",
-
             display: "flex",
-
             alignItems: "center",
           }}
         />
@@ -275,9 +272,11 @@ const ProjectDetails = () => {
                 value={project.details.timeline}
               />
 
-              <DetailRow
+              {project.githubLink_Backend ? (
+                <>
+                <DetailRow
                 icon={<FiExternalLink />}
-                label="Project Repository"
+                label="Frontend Repository"
                 value={
                   <Link
                     href={project.githubLink}
@@ -296,9 +295,7 @@ const ProjectDetails = () => {
                   </Link>
                 }
               />
-
-              {project.githubLink_Backend ? (
-                <DetailRow
+              <DetailRow
                   icon={<FiExternalLink />}
                   label="Backend Repository"
                   value={
@@ -319,7 +316,28 @@ const ProjectDetails = () => {
                     </Link>
                   }
                 />
-              ) : null}
+                </>
+              ) : <DetailRow
+                icon={<FiExternalLink />}
+                label="Project Repository"
+                value={
+                  <Link
+                    href={project.githubLink}
+                    target="_blank"
+                    underline="none"
+                    sx={{
+                      color: "#C7A667",
+                      fontWeight: 700,
+
+                      "&:hover": {
+                        opacity: 0.8,
+                      },
+                    }}
+                  >
+                    View Repository →
+                  </Link>
+                }
+              />}
             </Stack>
           </Grid>
 
