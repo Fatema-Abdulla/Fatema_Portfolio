@@ -2,7 +2,7 @@ import "../App.css"
 import HeaderHome from "../components/HeaderHome"
 import AboutMe from "../components/AboutMe"
 import TechStack from "../components/TechStack"
-import WorkExperinces from "../components/WorkExperinces"
+import WorkExperiences from "../components/WorkExperiences"
 import Contact from "../components/Contact"
 
 import Box from "@mui/material/Box"
@@ -15,7 +15,7 @@ const Home = () => {
       <HeaderHome />
       <AboutMe />
       <TechStack />
-      <WorkExperinces />
+      <WorkExperiences />
       <Element name="contact">
         <Contact />
       </Element>

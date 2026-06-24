@@ -50,7 +50,7 @@ const steps = [
   },
 ]
 
-const WorkExperinces = () => {
+const WorkExperiences = () => {
   return (
     <Box
       className="work"
@@ -112,4 +112,4 @@ const WorkExperinces = () => {
   )
 }
 
-export default WorkExperinces
+export default WorkExperiences

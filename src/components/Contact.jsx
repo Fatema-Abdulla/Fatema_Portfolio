@@ -45,6 +45,10 @@ const Contact = () => {
 
       setSuccess(true)
 
+      setTimeout(() => {
+        setSuccess(false)
+      }, 5000)
+
       setFormData({
         name: "",
         email: "",
@@ -53,25 +57,6 @@ const Contact = () => {
     } catch (error) {
       console.error("Error submitting form", error)
     }
-  }
-
-  const container = {
-    hidden: {},
-    show: {
-      transition: {
-        staggerChildren: 0.12,
-      },
-    },
-  }
-
-  const item = {
-    hidden: { opacity: 0, scale: 0.95, filter: "blur(6px)" },
-    show: {
-      opacity: 1,
-      scale: 1,
-      filter: "blur(0px)",
-      transition: { duration: 0.5 },
-    },
   }
 
   return (

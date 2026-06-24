@@ -2,7 +2,6 @@ import "../App.css"
 
 import Button from "@mui/material/Button"
 import Box from "@mui/material/Box"
-import Grid from "@mui/material/Grid"
 import { styled } from "@mui/material/styles"
 import { Link } from "react-scroll"
 
@@ -25,7 +24,7 @@ const HeaderHome = () => {
   return (
     <Box className="header-container" sx={{ flexGrow: 1, position: "relative", overflow: "hidden" }}>
       <Stars />
-        <div size={{ xs: 12, md: 7 }} className="header-text">
+        <div className="header-text">
           <h2 className="my-name">Hi, I'm Fatema Abdulla</h2>
           <h2 className="header-subtitle">Full Stack & WordPress Developer</h2>
           <h3 className="header-sentence">
