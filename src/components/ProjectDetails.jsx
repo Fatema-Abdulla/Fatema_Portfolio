@@ -100,7 +100,7 @@ const ProjectDetails = () => {
         overflow: "hidden",
       }}
     >
-      <Box
+      {/* <Box
         component={motion.div}
         initial={{
           opacity: 0,
@@ -155,7 +155,7 @@ const ProjectDetails = () => {
             alignItems: "center",
           }}
         />
-      </Box>
+      </Box> */}
 
       <Container
         component={motion.div}
