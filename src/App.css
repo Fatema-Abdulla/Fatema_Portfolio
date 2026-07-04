@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
 }
 
 body {
@@ -103,7 +106,7 @@ body {
   position: relative;
   z-index: 2;
   color: #f7f7f7;
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 600;
   margin-bottom: 18px;
 
@@ -161,6 +164,7 @@ body {
   margin-bottom: 20px;
   text-align: center;
   position: relative;
+  font-family: "Sora", sans-serif;
 }
 
 .about-paragraph {
@@ -196,6 +200,7 @@ body {
   font-weight: 800;
   margin: 55px 0 5px 0;
   text-align: center;
+  font-family: "Sora", sans-serif;
 }
 
 .tech-stack-container {
@@ -225,6 +230,7 @@ body {
   font-weight: 800;
   margin: 85px 0 5px 0;
   text-align: center;
+  font-family: "Sora", sans-serif;
 }
 
 .contact-des {
@@ -332,11 +338,11 @@ body {
   }
   40%,
   59% {
-    content: "Platforms";
+    content: "Ideas";
   }
   60%,
   79% {
-    content: "Solutions";
+    content: "Builds";
   }
   80%,
   100% {

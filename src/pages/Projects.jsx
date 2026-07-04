@@ -1,11 +1,11 @@
 import "../App.css"
-import HeaderFooter from "../components/HeaderFooter"
+import HeaderProject from "../components/HeaderProject"
 import ProjectCard from "../components/ProjectCard"
 
 const Projects = () => {
   return (
     <div>
-      <HeaderFooter />
+      <HeaderProject />
       <ProjectCard />
     </div>
   )

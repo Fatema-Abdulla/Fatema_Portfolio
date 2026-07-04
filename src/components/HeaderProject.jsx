@@ -3,7 +3,7 @@ import "../App.css"
 import Box from "@mui/material/Box"
 import { styled } from "@mui/material/styles"
 
-const HeaderFooter = () => {
+const HeaderProject = () => {
   return (
     <Box className="header-project" sx={{ flexGrow: 1, position: "relative", overflow: "hidden" }}>
         <div className="header-project-text">
@@ -13,4 +13,4 @@ const HeaderFooter = () => {
   )
 }
 
-export default HeaderFooter
+export default HeaderProject

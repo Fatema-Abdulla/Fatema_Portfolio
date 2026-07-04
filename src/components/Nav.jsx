@@ -54,7 +54,10 @@ const Nav = () => {
                 sm: "1.15rem",
                 md: "1.3rem",
               },
-              whiteSpace: "nowrap",
+              whiteSpace: { xs: "normal", sm: "nowrap" },
+              wordBreak: "break-word",
+              maxWidth: { xs: "80px", sm: "none" },
+              lineHeight: 1.1,
             }}
           >
             Fatema Abdulla
@@ -68,35 +71,33 @@ const Nav = () => {
             sm: 2,
           }}
         >
-          <NavLink
-            to="/"
-            style={({ isActive }) => ({
-              textDecoration: "none",
-              padding: "10px 20px",
-              borderRadius: "999px",
-              fontWeight: 700,
-              color: isActive ? "#10202D" : "#FFF",
-              background: isActive ? "#C7A667" : "transparent",
-              transition: ".3s",
-            })}
-          >
-            Home
-          </NavLink>
-
-          <NavLink
-            to="/projects"
-            style={({ isActive }) => ({
-              textDecoration: "none",
-              padding: "10px 20px",
-              borderRadius: "999px",
-              fontWeight: 700,
-              color: isActive ? "#10202D" : "#FFF",
-              background: isActive ? "#C7A667" : "transparent",
-              transition: ".3s",
-            })}
-          >
-            Projects
-          </NavLink>
+          {[
+            { to: "/", label: "Home", delay: 0.2 },
+            { to: "/projects", label: "Projects", delay: 0.35 },
+          ].map((item) => (
+            <motion.div
+              key={item.to}
+              initial={{ opacity: 0, y: -15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: item.delay }}
+              style={{ display: "inline-block" }}
+            >
+              <NavLink
+                to={item.to}
+                style={({ isActive }) => ({
+                  textDecoration: "none",
+                  padding: "10px 20px",
+                  borderRadius: "999px",
+                  fontWeight: 700,
+                  color: isActive ? "#10202D" : "#FFF",
+                  background: isActive ? "#C7A667" : "transparent",
+                  transition: ".3s",
+                })}
+              >
+                {item.label}
+              </NavLink>
+            </motion.div>
+          ))}
         </Stack>
       </Box>
     </Box>

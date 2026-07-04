@@ -26,9 +26,9 @@ const HeaderHome = () => {
       <Stars />
         <div className="header-text">
           <h2 className="my-name">Hi, I'm Fatema Abdulla</h2>
-          <h2 className="header-subtitle">Full Stack & WordPress Developer</h2>
+          <h2 className="header-subtitle">Full Stack Developer</h2>
           <h3 className="header-sentence">
-            Crafting modern, responsive web applications with clean architecture and UX-driven design.
+            Building modern, responsive web applications with clean architecture and great user experience.
           </h3>
           <ColorButton variant="contained" className="animate-button">
             <Link to="contact" smooth={true} duration={500}>

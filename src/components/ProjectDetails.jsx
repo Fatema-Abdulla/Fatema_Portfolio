@@ -125,15 +125,25 @@ const ProjectDetails = () => {
         }}
       >
         <Box
-          component="img"
-          src={`/images/${project.details.cover}`}
-          alt={project.name}
           sx={{
             width: "100%",
-            height: "100%",
-            objectFit: "cover",
+            height: { xs: 220, sm: 320, md: 362 },
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
           }}
-        />
+        >
+          <Box
+            component="img"
+            src={`/images/${project.details.cover}`}
+            alt={project.name}
+            sx={{
+              maxWidth: "100%",
+              maxHeight: "100%",
+              objectFit: "contain",
+            }}
+          />
+        </Box>
 
         <Box
           sx={{
@@ -222,6 +232,7 @@ const ProjectDetails = () => {
                 color: "#C7A667",
                 fontWeight: 800,
                 mb: 4,
+                fontFamily: '"Sora", sans-serif',
               }}
             >
               About {project.name}
@@ -274,33 +285,56 @@ const ProjectDetails = () => {
 
               {project.githubLink_Backend ? (
                 <>
-                <DetailRow
-                icon={<FiExternalLink />}
-                label="Frontend Repository"
-                value={
-                  <Link
-                    href={project.githubLink}
-                    target="_blank"
-                    underline="none"
-                    sx={{
-                      color: "#C7A667",
-                      fontWeight: 700,
+                  <DetailRow
+                    icon={<FiExternalLink />}
+                    label="Frontend Repository"
+                    value={
+                      <Link
+                        href={project.githubLink}
+                        target="_blank"
+                        underline="none"
+                        sx={{
+                          color: "#C7A667",
+                          fontWeight: 700,
 
-                      "&:hover": {
-                        opacity: 0.8,
-                      },
-                    }}
-                  >
-                    View Repository →
-                  </Link>
-                }
-              />
-              <DetailRow
+                          "&:hover": {
+                            opacity: 0.8,
+                          },
+                        }}
+                      >
+                        View Repository →
+                      </Link>
+                    }
+                  />
+                  <DetailRow
+                    icon={<FiExternalLink />}
+                    label="Backend Repository"
+                    value={
+                      <Link
+                        href={project.githubLink_Backend}
+                        target="_blank"
+                        underline="none"
+                        sx={{
+                          color: "#C7A667",
+                          fontWeight: 700,
+
+                          "&:hover": {
+                            opacity: 0.8,
+                          },
+                        }}
+                      >
+                        View Repository →
+                      </Link>
+                    }
+                  />
+                </>
+              ) : (
+                <DetailRow
                   icon={<FiExternalLink />}
-                  label="Backend Repository"
+                  label="Project Repository"
                   value={
                     <Link
-                      href={project.githubLink_Backend}
+                      href={project.githubLink}
                       target="_blank"
                       underline="none"
                       sx={{
@@ -316,28 +350,7 @@ const ProjectDetails = () => {
                     </Link>
                   }
                 />
-                </>
-              ) : <DetailRow
-                icon={<FiExternalLink />}
-                label="Project Repository"
-                value={
-                  <Link
-                    href={project.githubLink}
-                    target="_blank"
-                    underline="none"
-                    sx={{
-                      color: "#C7A667",
-                      fontWeight: 700,
-
-                      "&:hover": {
-                        opacity: 0.8,
-                      },
-                    }}
-                  >
-                    View Repository →
-                  </Link>
-                }
-              />}
+              )}
             </Stack>
           </Grid>
 
@@ -366,6 +379,7 @@ const ProjectDetails = () => {
                 color: "#C7A667",
                 fontWeight: 800,
                 mb: 5,
+                fontFamily: '"Sora", sans-serif',
               }}
             >
               Highlights
@@ -446,6 +460,7 @@ const ProjectDetails = () => {
                   color: "#C7A667",
                   fontWeight: 800,
                   mb: 4,
+                  fontFamily: '"Sora", sans-serif',
                 }}
               >
                 Tools
