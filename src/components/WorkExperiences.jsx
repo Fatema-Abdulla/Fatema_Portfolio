@@ -39,7 +39,7 @@ const steps = [
   },
   {
     id: 3,
-    title: "WordPress Developer Internship",
+    title: "WordPress Designer Internship",
     company: "Space Tap",
     date: "Jul 2024 - Aug 2024",
     description: [
